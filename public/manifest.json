@@ -1,0 +1,33 @@
+{
+  "id": "01a19ca6-8f9b-7270-a28b-ef59b6b5d767",
+  "name": "audio-controller",
+  "version": "0.1.1",
+  "description": "A volume mixer for your PC: pick an app that plays audio, then turn the wheel to set its volume or press it to mute.",
+  "icon": "icon.svg",
+  "settings": "settings.html",
+  "config": [
+    {
+      "type": "enum",
+      "data": {
+        "key": "step",
+        "label": "Volume per wheel click",
+        "description": "How much one click of the wheel changes an app's volume.",
+        "choices": ["1", "2", "5", "10"],
+        "choiceLabels": { "1": "1%", "2": "2%", "5": "5%", "10": "10%" },
+        "default": "2"
+      }
+    }
+  ],
+  "permissions": [],
+  "art": {
+    "heroPx": 248,
+    "thumbPx": 96
+  },
+  "extension": {
+    "entry": "extension/desktop.mjs",
+    "permissions": [
+      "run:powershell.exe"
+    ],
+    "api": 1
+  }
+}
